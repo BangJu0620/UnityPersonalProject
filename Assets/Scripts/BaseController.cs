@@ -11,9 +11,6 @@ public class BaseController : MonoBehaviour
     protected Vector2 movementDirection = Vector2.zero;
     public Vector2 MovementDirection { get { return movementDirection; } }
 
-    protected Vector2 lookDirection = Vector2.zero;
-    public Vector2 LookDirection { get { return lookDirection; } }
-
     protected AnimationHandler animationHandler;
 
     [Range(1f, 20f)][SerializeField] private float speed = 3;
