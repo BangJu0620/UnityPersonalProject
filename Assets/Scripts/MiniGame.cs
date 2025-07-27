@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MiniGame : InteractableObjectManager
 {
@@ -9,7 +10,8 @@ public class MiniGame : InteractableObjectManager
         if ((levelCollisionLayer.value & (1 << collision.gameObject.layer)) != 0)
         {
             // 미니게임 입장
-            Debug.Log("미니게임 입장");
+            GameManager.instance.isFirstPlayFlappyPlane = true;
+            SceneManager.LoadScene("FlappyPlaneScene");
         }
     }
 }
