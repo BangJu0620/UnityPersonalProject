@@ -13,7 +13,7 @@ public class BaseController : MonoBehaviour
 
     protected AnimationHandler animationHandler;
 
-    [Range(1f, 20f)][SerializeField] private float speed = 5;
+    [Range(1f, 20f)][SerializeField] private float speed = 7f;
 
     protected virtual void Awake()
     {
