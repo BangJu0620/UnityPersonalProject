@@ -33,16 +33,6 @@ public class RankingManager : MonoBehaviour
 
     public void CheckHigh(int score)
     {
-        //bool isExist = false;
-        //for (int i = 0; i < rankCount; i++)
-        //{
-        //    if(score > scoresList[i])
-        //    {
-        //        scoresList.Insert(i, score);
-        //        isExist = true;
-        //        break;
-        //    }
-        //}
         scoresList.Add(score);
         scoresList.Sort();
         scoresList.Reverse();
@@ -50,17 +40,13 @@ public class RankingManager : MonoBehaviour
         {
             scoresList.RemoveAt(rankCount);
         }
-        //return isExist;
     }
 
     public void AddRanking()
     {
-        //if (isExist)
-        //{
-            for (int i = 0; i < scoresList.Count; i++)
-            {
-                PlayerPrefs.SetInt(i.ToString(), scoresList[i]);
-            }
-        //}
+        for (int i = 0; i < scoresList.Count; i++)
+        {
+            PlayerPrefs.SetInt(i.ToString(), scoresList[i]);
+        }
     }
 }
