@@ -26,7 +26,8 @@ public class FlappyPlaneManager : MonoBehaviour
     }
     public void GameOver()
     {
-        RankingManager.instance.AddRanking(RankingManager.instance.CheckHigh(currentScore));
+        RankingManager.instance.CheckHigh(currentScore);
+        RankingManager.instance.AddRanking();
         flappyPlaneUIManager.SetRestart();
     }
 

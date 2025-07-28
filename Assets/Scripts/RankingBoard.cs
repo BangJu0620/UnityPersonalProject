@@ -23,4 +23,10 @@ public class RankingBoard : MonoBehaviour
                 rankingScoreText.text += "\n";
         }
     }
+
+    public void ResetScore()
+    {
+        PlayerPrefs.DeleteAll();
+        WriteRanking(RankingManager.rankCount);
+    }
 }

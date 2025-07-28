@@ -11,6 +11,8 @@ public class RankingManager : MonoBehaviour
 
     List<int> scoresList = new List<int>();
 
+    int i = 0;
+
     private void Awake()
     {
         if (instance == null)
@@ -22,40 +24,43 @@ public class RankingManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
-        for(int i = 0;  i < rankCount; i++)
+        while(PlayerPrefs.GetInt(i.ToString()) != 0)
         {
-            scoresList.Add(0);
+            CheckHigh(PlayerPrefs.GetInt(i.ToString()));
+            i++;
         }
     }
 
-    public bool CheckHigh(int score)
+    public void CheckHigh(int score)
     {
-        bool isExist = false;
-        for (int i = 0; i < rankCount; i++)
-        {
-            if(score > scoresList[i])
-            {
-                scoresList.Insert(i, score);
-                isExist = true;
-                break;
-            }
-        }
+        //bool isExist = false;
+        //for (int i = 0; i < rankCount; i++)
+        //{
+        //    if(score > scoresList[i])
+        //    {
+        //        scoresList.Insert(i, score);
+        //        isExist = true;
+        //        break;
+        //    }
+        //}
+        scoresList.Add(score);
+        scoresList.Sort();
+        scoresList.Reverse();
         if(scoresList.Count > rankCount)
         {
             scoresList.RemoveAt(rankCount);
         }
-        return isExist;
+        //return isExist;
     }
 
-    public void AddRanking(bool isExist)
+    public void AddRanking()
     {
-        if (isExist)
-        {
-            for (int i = 0; i < rankCount; i++)
+        //if (isExist)
+        //{
+            for (int i = 0; i < scoresList.Count; i++)
             {
                 PlayerPrefs.SetInt(i.ToString(), scoresList[i]);
             }
-        }
+        //}
     }
 }

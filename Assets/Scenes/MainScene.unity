@@ -7892,7 +7892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04c269494a1a6e45a6133b6c9b346d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rankingBoard: {fileID: 2073065617}
 --- !u!4 &614672220
 Transform:
   m_ObjectHideFlags: 0
@@ -9868,7 +9867,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreImage: {fileID: 820423135}
   bestScoreText: {fileID: 824699835}
-  rankingScoreText: {fileID: 235341058}
 --- !u!1 &1590281526
 GameObject:
   m_ObjectHideFlags: 0
@@ -11817,6 +11815,7 @@ GameObject:
   - component: {fileID: 2073065616}
   - component: {fileID: 2073065618}
   - component: {fileID: 2073065617}
+  - component: {fileID: 2073065619}
   m_Layer: 5
   m_Name: RankingBoard
   m_TagString: Untagged
@@ -11883,6 +11882,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073065615}
   m_CullTransparentMesh: 1
+--- !u!114 &2073065619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073065615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de6817969724b24e88db44d629e60d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rankingBoard: {fileID: 2073065617}
+  rankingScoreText: {fileID: 235341058}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
