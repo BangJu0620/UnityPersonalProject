@@ -10,29 +10,30 @@ public class FlappyPlaneManager : MonoBehaviour
 
     public int currentScore = 0;
 
-    FlappyPlaneUIManager uiManager;
+    FlappyPlaneUIManager flappyPlaneUIManager;
 
-    public FlappyPlaneUIManager UIManager { get { return uiManager; } }
+    public FlappyPlaneUIManager UIManager { get { return flappyPlaneUIManager; } }
 
     private void Awake()
     {
         flappyPlaneManager = this;
-        uiManager = FindObjectOfType<FlappyPlaneUIManager>();
+        flappyPlaneUIManager = FindObjectOfType<FlappyPlaneUIManager>();
     }
 
     public void Start()
     {
-        uiManager.UpdateScore(0);
+        flappyPlaneUIManager.UpdateScore(0);
     }
     public void GameOver()
     {
-        uiManager.SetRestart();
+        RankingManager.instance.AddRanking(RankingManager.instance.CheckHigh(currentScore));
+        flappyPlaneUIManager.SetRestart();
     }
 
     public void AddScore(int score)
     {
         currentScore += score;
-        uiManager.UpdateScore(currentScore);
+        flappyPlaneUIManager.UpdateScore(currentScore);
         if (flappyPlaneManager.currentScore >= GameManager.instance.bestScoreFlappyPlane)
         {
             GameManager.instance.bestScoreFlappyPlane = flappyPlaneManager.currentScore;

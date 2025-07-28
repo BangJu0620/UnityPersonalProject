@@ -15,13 +15,13 @@ public class FlappyPlaneUIManager : MonoBehaviour
 
     FlappyPlaneManager flappyPlaneManager;
     Player player;
-    FlappyPlaneUIManager uiManager;
+    FlappyPlaneUIManager flappyPlaneUIManager;
 
     void Start()
     {
         flappyPlaneManager = FlappyPlaneManager.Instance;
         player = Player.Instance;
-        uiManager = GetComponent<FlappyPlaneUIManager>();
+        flappyPlaneUIManager = GetComponent<FlappyPlaneUIManager>();
 
         if (GameManager.instance.isFirstPlayFlappyPlane)
         {
@@ -37,7 +37,7 @@ public class FlappyPlaneUIManager : MonoBehaviour
         }
         // 상관없이 적용할 것들
         GameManager.instance.isFirstPlayFlappyPlane = false;
-        uiManager.UpdateScore(0);
+        flappyPlaneUIManager.UpdateScore(0);
     }
 
     public void SetRestart()
